@@ -1,0 +1,47 @@
+### composition
+```
+public class potpie {
+    private int month;
+    private int day;
+    private int year;
+
+    public potpie(int m, int d, int y){
+        month = m;
+        day = d;
+        year = y;
+
+        System.out.printf("the constructor for this is %s\n", this);
+    }
+    public String toString(){
+        return String.format("%d/%d/%d",month,day,year);
+    }
+}
+```
+```
+public class tuna {
+    private String name;
+    private potpie birthday; //object of potpie
+
+    public tuna(String theName, potpie theDate){
+        name = theName;
+        birthday = theDate;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("My name is %s, my birthday is %s", name, birthday);
+    }
+}
+```
+```
+public static void main(String[] args) {
+        potpie potpieObject = new potpie(4,5,6);
+        tuna tunaObject = new tuna("Greg", potpieObject);
+
+        System.out.println(tunaObject);
+    }
+```
+```
+the constructor for this is 4/5/6
+My name is Greg, my birthday is 4/5/6
+```
