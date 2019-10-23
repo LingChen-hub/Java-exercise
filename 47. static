@@ -1,0 +1,46 @@
+```
+public class tuna {
+    private String first;
+    private String last;
+    private static int members = 0; //static指the common property of all objects
+
+    public tuna(String firstName, String lastName){
+        first = firstName;
+        last = lastName;
+        members++;
+        System.out.printf("Constructor for %s %s, members in the club: %d\n", first, last, members);
+    }
+    public String getFirst(){
+        return first;
+    }
+    public String getLast(){
+        return last;
+    }
+    public static int getMembers(){
+        return members;
+    }
+}
+```
+```
+public static void main(String[] args) {
+      tuna members1 = new tuna("Megan","Fox");
+      tuna members2 = new tuna("Natalie", "Portman");
+      tuna members3 = new tuna("Taylor", "Swift");
+
+        System.out.println(tuna.getMembers()); //getMembers都是3
+
+        System.out.println(members1.getFirst());
+        System.out.println(members1.getLast());
+        System.out.println(members1.getMembers());
+}
+```
+```
+//output
+Constructor for Megan Fox, members in the club: 1
+Constructor for Natalie Portman, members in the club: 2
+Constructor for Taylor Swift, members in the club: 3
+3
+Megan
+Fox
+3
+```
